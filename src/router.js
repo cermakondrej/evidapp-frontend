@@ -21,9 +21,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import auth from "@/auth/authService";
 
-import firebase from 'firebase/app'
-import 'firebase/auth'
-
 Vue.use(Router)
 
 const router = new Router({
@@ -74,24 +71,187 @@ const router = new Router({
                 component: () => import('./views/pages/company/CompanyList.vue'),
                 meta: {
                   breadcrumb: [
-                    { title: 'Home', url: '/' },
-                    { title: 'Companies', active: true },
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Společnosti', active: true },
                   ],
-                  pageTitle: 'Companies List',
+                  pageTitle: 'Společnosti',
                   rule: 'editor'
                 },
               },
               {
                 path: '/companies/new',
                 name: 'companies-new',
-                component: () => import('./views/forms/company/CompanyForm.vue'),
+                component: () => import('./views/forms/company/CompanyNew.vue'),
                 meta: {
                   breadcrumb: [
-                    { title: 'Home', url: '/' },
-                    { title: 'Companies', url: '/companies' },
-                    { title: 'New', active: true },
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Společnosti', url: '/companies' },
+                    { title: 'Nová', active: true },
                   ],
-                  pageTitle: 'New Company',
+                  pageTitle: 'Nová společnost',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/companies/edit/:companyId',
+                name: 'companies-edit',
+                component: () => import('./views/forms/company/CompanyEdit.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Společnosti', url: '/companies' },
+                    { title: 'Upravit', active: true },
+                  ],
+                  pageTitle: 'Upravit společnost',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/jobs',
+                name: 'jobs-list',
+                component: () => import('./views/pages/job/JobList.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Pracovní pozice', active: true },
+                  ],
+                  pageTitle: 'Pracovní pozice',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/jobs/new',
+                name: 'jobs-new',
+                component: () => import('./views/forms/job/JobNew.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Pracovní pozice', url: '/jobs' },
+                    { title: 'Nová', active: true },
+                  ],
+                  pageTitle: 'Nová pracovní pozice',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/jobs/edit/:jobId',
+                name: 'jobs-edit',
+                component: () => import('./views/forms/job/JobEdit.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Pracovní pozice', url: '/jobs' },
+                    { title: 'Upravit', active: true },
+                  ],
+                  pageTitle: 'Upravit pracovní pozice',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/users',
+                name: 'users-list',
+                component: () => import('./views/pages/user/UserList.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Zaměstnanci', active: true },
+                  ],
+                  pageTitle: 'Zaměstnanci',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/users/new',
+                name: 'users-new',
+                component: () => import('./views/forms/user/UserNew.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Zaměstnanci', url: '/users' },
+                    { title: 'Nový', active: true },
+                  ],
+                  pageTitle: 'Nový zaměstnanec',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/users/edit/:userId',
+                name: 'users-edit',
+                component: () => import('./views/forms/user/UserEdit.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Zaměstnanci', url: '/users' },
+                    { title: 'Upravit', active: true },
+                  ],
+                  pageTitle: 'Upravit zaměstnance',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/works',
+                name: 'works-list',
+                component: () => import('./views/pages/work/WorkList.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Pracovní úvazky', active: true },
+                  ],
+                  pageTitle: 'Pracovní úvazky',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/works/new',
+                name: 'works-new',
+                component: () => import('./views/forms/work/WorkNew.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Pracovní úvazky', url: '/works' },
+                    { title: 'Nový', active: true },
+                  ],
+                  pageTitle: 'Nový pracovní úvazek',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/works/edit/:workId',
+                name: 'works-edit',
+                component: () => import('./views/forms/work/WorkEdit.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Pracovní úvazky', url: '/works' },
+                    { title: 'Upravit', active: true },
+                  ],
+                  pageTitle: 'Upravit pracovní úvazek ',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/exports/employee/new',
+                name: 'exports-employee-new',
+                component: () => import('./views/exports/EmployeeExport.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Nový pracovní výkaz', active: true },
+                  ],
+                  pageTitle: 'Nový pracovní výkaz',
+                  rule: 'editor'
+                },
+              },
+              {
+                path: '/exports/variable/new',
+                name: 'exports-variable-new',
+                component: () => import('./views/exports/VariableExport.vue'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Domácí stránka', url: '/' },
+                    { title: 'Nový pracovní výkaz se směnami', active: true },
+                  ],
+                  pageTitle: 'Nový pracovní výkaz se směnami',
                   rule: 'editor'
                 },
               },
@@ -1330,31 +1490,23 @@ const router = new Router({
                     name: 'auth-callback',
                     component: () => import('@/views/Callback.vue'),
                     meta: {
-                        rule: 'editor'
+                        rule: 'public'
                     }
                 },
                 {
-                    path: '/pages/login',
+                    path: '/login',
                     name: 'page-login',
                     component: () => import('@/views/pages/login/Login.vue'),
                     meta: {
-                        rule: 'editor'
+                        rule: 'public'
                     }
                 },
                 {
-                    path: '/pages/register',
-                    name: 'page-register',
-                    component: () => import('@/views/pages/register/Register.vue'),
-                    meta: {
-                        rule: 'editor'
-                    }
-                },
-                {
-                    path: '/pages/forgot-password',
+                    path: '/forgot-password',
                     name: 'page-forgot-password',
                     component: () => import('@/views/pages/ForgotPassword.vue'),
                     meta: {
-                        rule: 'editor'
+                        rule: 'public'
                     }
                 },
                 {
@@ -1398,11 +1550,11 @@ const router = new Router({
                     }
                 },
                 {
-                    path: '/pages/not-authorized',
+                    path: '/not-authorized',
                     name: 'page-not-authorized',
                     component: () => import('@/views/pages/NotAuthorized.vue'),
                     meta: {
-                        rule: 'editor'
+                        rule: 'public'
                     }
                 },
                 {
@@ -1430,40 +1582,5 @@ router.afterEach(() => {
         appLoading.style.display = "none";
     }
 })
-
-router.beforeEach((to, from, next) => {
-    firebase.auth().onAuthStateChanged(() => {
-
-        // get firebase current user
-        const firebaseCurrentUser = firebase.auth().currentUser
-
-        // if (
-        //     to.path === "/pages/login" ||
-        //     to.path === "/pages/forgot-password" ||
-        //     to.path === "/pages/error-404" ||
-        //     to.path === "/pages/error-500" ||
-        //     to.path === "/pages/register" ||
-        //     to.path === "/callback" ||
-        //     to.path === "/pages/comingsoon" ||
-        //     (auth.isAuthenticated() || firebaseCurrentUser)
-        // ) {
-        //     return next();
-        // }
-
-        // If auth required, check login. If login fails redirect to login page
-        if(to.meta.authRequired) {
-          if (!(auth.isAuthenticated() || firebaseCurrentUser)) {
-            router.push({ path: '/pages/login', query: { to: to.path } })
-          }
-        }
-
-        return next()
-        // Specify the current path as the customState parameter, meaning it
-        // will be returned to the application after auth
-        // auth.login({ target: to.path });
-
-    });
-
-});
 
 export default router

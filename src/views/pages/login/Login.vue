@@ -28,19 +28,8 @@
                   <p>Welcome back, please login to your account.</p>
                 </div>
 
-                <vs-tabs>
-                  <vs-tab label="JWT">
-                    <login-jwt></login-jwt>
-                  </vs-tab>
+                <login-jwt></login-jwt>
 
-                  <vs-tab label="Firebase">
-                    <login-firebase></login-firebase>
-                  </vs-tab>
-
-                  <vs-tab label="Auth0">
-                    <login-auth0></login-auth0>
-                  </vs-tab>
-                </vs-tabs>
 
               </div>
             </div>
@@ -53,29 +42,25 @@
 
 
 <script>
-import LoginJwt from "./LoginJWT.vue"
-import LoginFirebase from "./LoginFirebase.vue"
-import LoginAuth0 from "./LoginAuth0.vue"
+  import LoginJwt from "./LoginJWT.vue"
 
-export default {
-  components: {
-    LoginJwt,
-    LoginFirebase,
-    LoginAuth0
+  export default {
+    components: {
+      LoginJwt,
+    }
   }
-}
 </script>
 
 <style lang="scss">
-.login-tabs-container {
-  min-height: 505px;
+  .login-tabs-container {
+    min-height: 505px;
 
-  .con-tab {
-    padding-bottom: 14px;
-  }
+    .con-tab {
+      padding-bottom: 14px;
+    }
 
-  .con-slot-tabs {
-    margin-top: 1rem;
+    .con-slot-tabs {
+      margin-top: 1rem;
+    }
   }
-}
 </style>

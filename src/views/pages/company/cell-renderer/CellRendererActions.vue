@@ -11,7 +11,7 @@
         methods: {
           editRecord() {
 
-              this.$router.push("/companies/editRecord" + this.params.data.id).catch(() => {})
+              this.$router.push("/companies/edit/" + this.params.data.id).catch(() => {})
 
           },
           confirmDeleteRecord() {
@@ -26,7 +26,7 @@
           },
           deleteRecord() {
 
-            this.$store.dispatch("companies/removeRecord", this.params.data.id)
+            this.$store.dispatch("companies/remove", this.params.data.id)
               .then(()   => { this.showDeleteSuccess() })
               .catch(err => { console.error(err)       })
           },
@@ -34,7 +34,7 @@
             this.$vs.notify({
               color: 'success',
               title: 'Společnost smazána',
-              text: 'Vybraná společnost byla smazána.'
+              text: `Společnost "${this.params.data.name}" byla smazána.`
             })
           }
         }

@@ -1,6 +1,6 @@
 <template>
 
-  <div id="page-user-list">
+  <div id="page-companies-list">
 
     <div class="vx-card p-6">
 
@@ -10,7 +10,7 @@
         <div class="flex-grow">
           <vs-dropdown vs-trigger-click class="cursor-pointer">
             <div class="p-4 border border-solid d-theme-border-grey-light rounded-full d-theme-dark-bg cursor-pointer flex items-center justify-between font-medium">
-              <span class="mr-2">{{ currentPage * paginationPageSize - (paginationPageSize - 1) }} - {{ companiesData.length - currentPage * paginationPageSize > 0 ? currentPage * paginationPageSize : companies.length }} z {{ companies.length }}</span>
+              <span class="mr-2">{{ currentPage * paginationPageSize - (paginationPageSize - 1) }} - {{ companiesData.length - currentPage * paginationPageSize > 0 ? currentPage * paginationPageSize : companiesData.length }} z {{ companiesData.length }}</span>
               <feather-icon icon="ChevronDownIcon" svgClasses="h-4 w-4" />
             </div>
             <!-- <vs-button class="btn-drop" type="line" color="primary" icon-pack="feather" icon="icon-chevron-down"></vs-button> -->
@@ -137,7 +137,8 @@
     },
     computed: {
       companiesData() {
-        return this.$store.state.companies.companies
+        return this.$store.getters['companies/getAll']
+
       },
       paginationPageSize() {
         if(this.gridApi) return this.gridApi.paginationGetPageSize()
@@ -180,21 +181,8 @@
         this.$store.registerModule('companies', moduleCompanies)
         moduleCompanies.isRegistered = true
       }
-      this.$store.dispatch("companies/fetchCompanies").catch(err => { console.error(err) })
+      this.$store.dispatch("companies/fetchAll").catch(err => { console.error(err) })
     }
   }
 
 </script>
-
-<style lang="scss">
-  #page-user-list {
-    .user-list-filters {
-      .vs__actions {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-58%);
-      }
-    }
-  }
-</style>

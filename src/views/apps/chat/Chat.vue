@@ -120,9 +120,9 @@ export default {
         if (unseenMsg) return unseenMsg
       }
     },
-    activeUser() {
-      return this.$store.state.AppActiveUser
-    },
+      activeUser() {
+        return this.$store.state.AppActiveUser
+      },
     getStatusColor() {
       return (isActiveUser) => {
         const userStatus = this.getUserStatus(isActiveUser)

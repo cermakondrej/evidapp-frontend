@@ -66,15 +66,15 @@ export default {
       {title: "Form Input Group",          url: "/forms/form-input-group",             icon: "MenuIcon",           is_bookmarked: false},
 
       // PAGES
-      {title: "Login Page",                url: "/pages/login",                        icon: "LockIcon",           is_bookmarked: false},
+      {title: "Login Page",                url: "/login",                        icon: "LockIcon",           is_bookmarked: false},
       {title: "Register Page",             url: "/pages/register",                     icon: "UserPlusIcon",       is_bookmarked: false},
-      {title: "Forgot Password Page",      url: "/pages/forgot-password",              icon: "HelpCircleIcon",     is_bookmarked: false},
+      {title: "Forgot Password Page",      url: "/forgot-password",              icon: "HelpCircleIcon",     is_bookmarked: false},
       {title: "Reset Password Page",       url: "/pages/reset-password",               icon: "UnlockIcon",         is_bookmarked: false},
       {title: "Lock Screen Page",          url: "/pages/lock-screen",                  icon: "LockIcon",           is_bookmarked: false},
       {title: "Coming Soon Page",          url: "/pages/comingsoon",                   icon: "ClockIcon",          is_bookmarked: false},
       {title: "404 Page",                  url: "/pages/error-404",                    icon: "MonitorIcon",        is_bookmarked: false},
       {title: "500 Page",                  url: "/pages/error-500",                    icon: "MonitorIcon",        is_bookmarked: false},
-      {title: "Not Authorized Page",       url: "/pages/not-authorized",               icon: "XCircleIcon",        is_bookmarked: false},
+      {title: "Not Authorized Page",       url: "/not-authorized",               icon: "XCircleIcon",        is_bookmarked: false},
       {title: "Maintenance Page",          url: "/pages/maintenance",                  icon: "MonitorIcon",        is_bookmarked: false},
       {title: "Profile Page",              url: "/pages/profile",                      icon: "UserIcon",           is_bookmarked: false},
       {title: "User List",                 url: "/pages/user/user-list",               icon: "ListIcon",           is_bookmarked: false},

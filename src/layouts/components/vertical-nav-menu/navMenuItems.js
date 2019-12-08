@@ -50,23 +50,92 @@ export default [
     ]
   },
   {
-    header: "Companies",
-    icon: "PackageIcon",
-    i18n: "Companies",
+    header: "Zaměstnanci",
+    icon: "UsersIcon",
     items: [
       {
-        url: '/companies/list',
-        name: "List",
+        url: '/users',
+        name: "Seznam zaměstnanců",
+        slug: "users-list",
+        icon: "MenuIcon",
+      },
+      {
+        url: '/users/new',
+        name: "Nový zaměstnanec",
+        slug: "users-new",
+        icon: "PlusIcon",
+      }
+    ]
+  },
+  {
+    header: "Společnosti",
+    icon: "DatabaseIcon",
+    items: [
+      {
+        url: '/companies',
+        name: "Seznam společností",
         slug: "companies-list",
-        icon: "MailIcon",
-        i18n: "List",
+        icon: "MenuIcon",
       },
       {
         url: '/companies/new',
-        name: "New",
+        name: "Nová společnost",
         slug: "companies-new",
-        icon: "MailIcon",
-        i18n: "New",
+        icon: "PlusIcon",
+      }
+    ]
+  },
+  {
+    header: "Pracovní pozice",
+    icon: "BriefcaseIcon",
+    items: [
+      {
+        url: '/jobs',
+        name: "Seznam pozic",
+        slug: "jobs-list",
+        icon: "MenuIcon",
+      },
+      {
+        url: '/jobs/new',
+        name: "Nová pozice",
+        slug: "jobs-new",
+        icon: "PlusIcon",
+      }
+    ]
+  },
+  {
+    header: "Pracovní úvazky",
+    icon: "ArchiveIcon",
+    items: [
+      {
+        url: '/works',
+        name: "Seznam úvazků",
+        slug: "works-list",
+        icon: "MenuIcon",
+      },
+      {
+        url: '/works/new',
+        name: "Nový úvazek",
+        slug: "works-new",
+        icon: "PlusIcon",
+      }
+    ]
+  },
+  {
+    header: "Pracovní výkazy",
+    icon: "ArchiveIcon",
+    items: [
+      {
+        url: '/exports/employee/new',
+        name: "Zaměstnanecký výkaz",
+        slug: "exports-employee-new",
+        icon: "MenuIcon",
+      },
+      {
+        url: '/exports/variable/new',
+        name: "Směnový výkaz",
+        slug: "exports-variable-new",
+        icon: "PlusIcon",
       }
     ]
   },
@@ -676,7 +745,7 @@ export default [
         i18n: "Authentication",
         submenu: [
           {
-            url: '/pages/login',
+            url: '/login',
             name: "Login",
             slug: "pages-login",
             i18n: "Login",
@@ -690,7 +759,7 @@ export default [
             target: '_blank',
           },
           {
-            url: '/pages/forgot-password',
+            url: '/forgot-password',
             name: "Forgot Password",
             slug: "pages-forgot-password",
             i18n: "ForgotPassword",
@@ -719,7 +788,7 @@ export default [
         i18n: "Miscellaneous",
         submenu: [
           {
-            url: '/pages/not-authorized',
+            url: '/not-authorized',
             name: "Not Authorized",
             slug: "page-not-authorized",
             icon: "XCircleIcon",
@@ -799,74 +868,6 @@ export default [
         icon: "MapIcon",
         slug: "extra-component-maps-google-map",
         i18n: "GoogleMap",
-      },
-    ]
-  },
-  {
-    header: "Others",
-    icon: "MoreHorizontalIcon",
-    i18n: "Others",
-    items: [
-      {
-        url: null,
-        name: "Menu Levels",
-        icon: "MenuIcon",
-        i18n: "MenuLevels",
-        submenu: [
-          {
-            url: null,
-            name: "Menu Level 2.1",
-            i18n: "MenuLevel2p1",
-          },
-          {
-            url: null,
-            name: "Menu Level 2.2",
-            i18n: "MenuLevel2p2",
-            submenu: [
-              {
-                url: null,
-                name: "Menu Level 3.1",
-                i18n: "MenuLevel3p1",
-              },
-              {
-                url: null,
-                name: "Menu Level 3.2",
-                i18n: "MenuLevel3p2",
-              },
-            ]
-          },
-        ]
-      },
-      {
-        url: null,
-        name: "Disabled Menu",
-        icon: "EyeOffIcon",
-        i18n: "DisabledMenu",
-        isDisabled: true,
-      },
-      {
-        url: null,
-        name: "Support",
-        icon: "SmileIcon",
-        i18n: "Support",
-        submenu: [
-          {
-            url: 'https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/documentation/',
-            name: "Documentation",
-            icon: "BookOpenIcon",
-            slug: "external",
-            i18n: "Documentation",
-            target: "_blank"
-          },
-          {
-            url: 'https://pixinvent.ticksy.com/',
-            name: "Raise Support",
-            icon: "LifeBuoyIcon",
-            slug: "external",
-            i18n: "RaiseSupport",
-            target: "_blank"
-          },
-        ]
       },
     ]
   },

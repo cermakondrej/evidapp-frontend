@@ -1,11 +1,3 @@
-/*=========================================================================================
-  File Name: moduleAuthMutations.js
-  Description: Auth Module Mutations
-  ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-  Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-==========================================================================================*/
 
 export default {
   SET_COMPANIES(state, companies) {
@@ -13,6 +5,13 @@ export default {
   },
   REMOVE_COMPANY(state, companyId) {
     const companyIndex = state.companies.findIndex((u) => u.id == companyId)
-    state.users.splice(companyIndex, 1)
+    state.companies.splice(companyIndex, 1)
   },
+  CREATE_COMPANY(state, company){
+    state.companies.unshift(company)
+  },
+  EDIT_COMPANY(state, company){
+    const companyIndex = state.companies.findIndex((u)=> u.id == company.id)
+    Object.assign(state.companies[companyIndex], company)
+  }
 }

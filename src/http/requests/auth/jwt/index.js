@@ -27,9 +27,9 @@ export default {
         if (!isAlreadyFetchingAccessToken) {
           isAlreadyFetchingAccessToken = true
           store.dispatch("auth/fetchAccessToken")
-            .then((access_token) => {
+            .then((response) => {
               isAlreadyFetchingAccessToken = false
-              onAccessTokenFetched(access_token)
+              onAccessTokenFetched(response.data.token)
             })
         }
 
@@ -44,10 +44,13 @@ export default {
       return Promise.reject(error)
     })
   },
+  me() {
+    return axios.get("/api/auth/me")
+  },
   login(email, pwd) {
-    return axios.post("/api/login_check", {email: email, password: pwd})
+    return axios.post("/api/login_check", {username: email, password: pwd})
   },
   refreshToken() {
-    return axios.post("/api/auth/refresh", {refresh: localStorage.getItem("refresh_token")})
+    return axios.post("/api/auth/refresh", {refresh: localStorage.getItem("refreshToken")})
   }
 }
