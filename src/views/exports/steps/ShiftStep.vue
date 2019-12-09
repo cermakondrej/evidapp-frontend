@@ -172,7 +172,7 @@
   import {CalendarView, CalendarViewHeader} from "vue-simple-calendar"
   import moduleCalendar from '@/store/calendar/moduleCalendar.js'
   import Datepicker from 'vuejs-datepicker'
-  import {en, he} from "vuejs-datepicker/src/locale"
+  import {en, cs} from "vuejs-datepicker/src/locale"
 
   export default {
     components: {
