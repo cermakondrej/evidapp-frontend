@@ -22,9 +22,10 @@ export default {
     getCurrentLocaleData() {
         const locale = this.$i18n.locale;
         if (locale == "en")      return { flag: "us", lang: 'English'    }
-        else if (locale == "pt") return { flag: "br", lang: 'Portuguese' }
-        else if (locale == "fr") return { flag: "fr", lang: 'French'     }
-        else if (locale == "de") return { flag: "de", lang: 'German'     }
+        if (locale == "pt") return { flag: "br", lang: 'Portuguese' }
+        if (locale == "fr") return { flag: "fr", lang: 'French'     }
+        if (locale == "de") return { flag: "de", lang: 'German'     }
+        return { flag: "en", lang: 'English'}
     },
   },
   methods: {

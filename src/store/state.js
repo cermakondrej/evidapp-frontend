@@ -2,14 +2,9 @@ import navbarSearchAndPinList from "@/layouts/components/navbar/navbarSearchAndP
 import themeConfig from "@/../themeConfig.js"
 import colors from "@/../themeConfig.js"
 
-// /////////////////////////////////////////////
-// Helper
-// /////////////////////////////////////////////
-
 const userInfoLocalStorage = JSON.parse(localStorage.getItem("userInfo")) || {}
 
-// Set default values for active-user
-// More data can be added by auth provider or other plugins/packages
+
 const getUserInfo = () => {
   let userInfo = {}
 
@@ -20,10 +15,6 @@ const getUserInfo = () => {
 
   return userInfo
 }
-
-// /////////////////////////////////////////////
-// State
-// /////////////////////////////////////////////
 
 const state = {
     AppActiveUser           : getUserInfo(),

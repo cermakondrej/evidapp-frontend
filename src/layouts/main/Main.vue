@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: Main.vue
-    Description: Main layout
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-    Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
   <div class="layout--main" :class="[layoutTypeClass, navbarClasses, footerClasses, {'no-scroll': isAppPage}]">
 
@@ -26,16 +16,11 @@
       @updateNavbarColor      = "updateNavbarColor"
       @updateRouterTransition = "updateRouterTransition" />
 
-    <v-nav-menu
-      :navMenuItems = "navMenuItems"
-      title         = "Vuexy"
-      parent        = ".layout--main" />
 
     <div id="content-area" :class="[contentAreaClass, {'show-overlay': bodyOverlay}]">
       <div id="content-overlay" />
 
-    <!-- Navbar -->
-    <template v-if="mainLayoutType === 'horizontal' && windowWidth >= 1200">
+    <template>
       <the-navbar-horizontal
         :navbarType= "navbarType"
         :class="[
@@ -53,15 +38,6 @@
         :navMenuItems="navMenuItems" />
     </template>
 
-    <template v-else>
-      <the-navbar-vertical
-        :navbarColor="navbarColor"
-        :class="[
-          {'text-white' : isNavbarDark  && !isThemeDark},
-          {'text-base'  : !isNavbarDark && isThemeDark}
-        ]" />
-    </template>
-    <!-- /Navbar -->
 
       <div class="content-wrapper">
 
@@ -132,15 +108,12 @@
 <script>
 import BackToTop           from 'vue-backtotop'
 import HNavMenu            from "@/layouts/components/horizontal-nav-menu/HorizontalNavMenu.vue"
-import navMenuItems        from "@/layouts/components/vertical-nav-menu/navMenuItems.js"
+import navMenuItems        from "@/layouts/components/navMenuItems.js"
 import TheCustomizer       from "@/layouts/components/customizer/TheCustomizer.vue"
 import TheNavbarHorizontal from '@/layouts/components/navbar/TheNavbarHorizontal.vue'
-import TheNavbarVertical   from '@/layouts/components/navbar/TheNavbarVertical.vue'
 import TheFooter           from '@/layouts/components/TheFooter.vue'
 import themeConfig         from '@/../themeConfig.js'
-import VNavMenu            from '@/layouts/components/vertical-nav-menu/VerticalNavMenu.vue'
 
-const VxTour = () => import('@/components/VxTour.vue')
 
 export default {
   components: {
@@ -149,9 +122,6 @@ export default {
     TheCustomizer,
     TheFooter,
     TheNavbarHorizontal,
-    TheNavbarVertical,
-    VNavMenu,
-    VxTour
   },
   data() {
     return {

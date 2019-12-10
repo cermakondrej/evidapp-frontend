@@ -1,4 +1,3 @@
-
 let colors = {
 	primary : '#7367F0',
 	success : '#28C76F',

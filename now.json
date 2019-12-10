@@ -8,14 +8,6 @@
   "regions": [
     "bru"
   ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
   "builds": [
     {
       "src": "package.json",

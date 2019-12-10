@@ -1,12 +1,3 @@
-<!-- =========================================================================================
-	File Name: App.vue
-	Description: Main vue file - APP
-	----------------------------------------------------------------------------------------
-	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-	Author: Pixinvent
-	Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
 
 <template>
 	<div id="app" :class="vueAppClasses">
@@ -78,10 +69,6 @@ export default {
 
     window.addEventListener('resize', this.handleWindowResize)
     window.addEventListener('scroll', this.handleScroll)
-
-    // Auth0
-    try       { await this.$auth.renewTokens() }
-    catch (e) { console.error(e) }
 
   },
   destroyed() {

@@ -33,13 +33,12 @@ export default {
             })
         }
 
-        const retryOriginalRequest = new Promise((resolve) => {
+        return new Promise((resolve) => {
           addSubscriber(access_token => {
             originalRequest.headers.Authorization = 'Bearer ' + access_token
             resolve(axios(originalRequest))
           })
         })
-        return retryOriginalRequest
       }
       return Promise.reject(error)
     })

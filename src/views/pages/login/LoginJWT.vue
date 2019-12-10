@@ -50,24 +50,7 @@ export default {
     },
   },
   methods: {
-    checkLogin() {
-      if (this.$store.state.auth.isUserLoggedIn()) {
-
-        this.$vs.notify({
-          title: 'Login Attempt',
-          text: 'You are already logged in!',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle',
-          color: 'warning'
-        })
-
-        return false
-      }
-      return true
-    },
     loginJWT() {
-
-      if (!this.checkLogin()) return
 
       // Loading
       this.$vs.loading()
@@ -93,10 +76,6 @@ export default {
           })
         })
     },
-    registerUser() {
-      if (!this.checkLogin()) return
-      this.$router.push('/pages/register').catch(() => {})
-    }
   }
 }
 

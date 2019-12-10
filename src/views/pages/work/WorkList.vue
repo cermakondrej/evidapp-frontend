@@ -71,30 +71,17 @@
 </template>
 
 <script>
-  import {AgGridVue} from "ag-grid-vue"
   import '@/assets/scss/vuexy/extraComponents/agGridStyleOverride.scss'
-  import vSelect from 'vue-select'
 
   // Store Module
   import moduleWorks from '@/store/works/moduleWorks.js'
 
   // Cell Renderer
-  import CellRendererLink from "./cell-renderer/CellRendererLink.vue"
-  import CellRendererActions from "./cell-renderer/CellRendererActions.vue"
 
 
   export default {
-    components: {
-      AgGridVue,
-      vSelect,
-
-      // Cell Renderer
-      CellRendererLink,
-      CellRendererActions,
-    },
     data() {
       return {
-
         searchQuery: "",
 
         // AgGrid
@@ -144,15 +131,10 @@
             headerName: 'Akce',
             field: 'transactions',
             width: 150,
-            cellRendererFramework: 'CellRendererActions',
+            cellRendererFramework: 'CellRendererActions'
           },
         ],
 
-        // Cell Renderer Components
-        components: {
-          CellRendererLink,
-          CellRendererActions,
-        }
       }
     },
     computed: {

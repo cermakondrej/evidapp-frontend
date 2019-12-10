@@ -169,15 +169,13 @@
 
   require("vue-simple-calendar/static/css/default.css")
 
-  import {CalendarView, CalendarViewHeader} from "vue-simple-calendar"
-  import moduleCalendar from '@/store/calendar/moduleCalendar.js'
+  import {CalendarView} from "vue-simple-calendar"
   import Datepicker from 'vuejs-datepicker'
   import {en, cs} from "vuejs-datepicker/src/locale"
 
   export default {
     components: {
       CalendarView,
-      CalendarViewHeader,
       Datepicker
     },
     data() {
@@ -255,6 +253,7 @@
         this.addNewEventDialog(date);
       },
       openEditEvent(event) {
+        // TODO Move events to store
         const e = this.$store.getters['calendar/getEvent'](event.id)
         this.id = e.id
         this.title = e.title
@@ -274,23 +273,15 @@
           url: this.url
         }
         obj.classes = "event-" + this.labelColor(this.labelLocal)
-        this.$store.dispatch('calendar/editEvent', obj)
+        // TODO
       },
       removeEvent() {
-        this.$store.dispatch('calendar/removeEvent', this.id)
+        // TODO
       },
       eventDragged(event, date) {
-        this.$store.dispatch('calendar/eventDragged', {event: event, date: date})
+        // TODO
       }
     },
-    created() {
-      this.$store.registerModule('calendar', moduleCalendar)
-      this.$store.dispatch("calendar/fetchEvents")
-      this.$store.dispatch("calendar/fetchEventLabels")
-    },
-    beforeDestroy() {
-      this.$store.unregisterModule('calendar')
-    }
   }
 </script>
 
