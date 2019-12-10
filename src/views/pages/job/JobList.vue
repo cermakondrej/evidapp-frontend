@@ -69,27 +69,20 @@
 </template>
 
 <script>
+  /* eslint-disable */
   import { AgGridVue } from "ag-grid-vue"
   import '@/assets/scss/vuexy/extraComponents/agGridStyleOverride.scss'
-  import vSelect from 'vue-select'
-
-  // Store Module
-  import moduleJobs from '@/store/jobs/moduleJobs.js'
-
-  // Cell Renderer
   import CellRendererLink from "./cell-renderer/CellRendererLink.vue"
   import CellRendererActions from "./cell-renderer/CellRendererActions.vue"
-
+  import moduleJobs from '@/store/jobs/moduleJobs.js'
 
   export default {
     components: {
       AgGridVue,
-      vSelect,
-
-      // Cell Renderer
       CellRendererLink,
       CellRendererActions,
     },
+    /* eslint-enable */
     data() {
       return {
 
@@ -127,7 +120,6 @@
             cellRendererFramework: 'CellRendererActions',
           },
         ],
-
         // Cell Renderer Components
         components: {
           CellRendererLink,

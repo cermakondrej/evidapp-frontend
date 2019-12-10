@@ -16,5 +16,13 @@
         "maxLambdaSize": "35mb"
       }
     }
+  ],
+  "routes": [
+    {
+      "src": "/(js|css|img)/.*",
+      "headers": { "cache-control": "max-age=31536000, immutable" }
+    },
+    { "handle": "filesystem" },
+    { "src": ".*", "dest": "/" }
   ]
 }

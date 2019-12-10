@@ -71,15 +71,20 @@
 </template>
 
 <script>
+  /* eslint-disable */
+  import {AgGridVue} from "ag-grid-vue"
   import '@/assets/scss/vuexy/extraComponents/agGridStyleOverride.scss'
-
-  // Store Module
   import moduleWorks from '@/store/works/moduleWorks.js'
-
-  // Cell Renderer
-
+  import CellRendererLink from "../company/cell-renderer/CellRendererLink";
+  import CellRendererActions from "../company/cell-renderer/CellRendererActions";
 
   export default {
+    components: {
+      AgGridVue,
+      CellRendererLink,
+      CellRendererActions,
+    },
+    /* eslint-enable */
     data() {
       return {
         searchQuery: "",
@@ -134,7 +139,11 @@
             cellRendererFramework: 'CellRendererActions'
           },
         ],
-
+        // Cell Renderer Components
+        components: {
+          CellRendererLink,
+          CellRendererActions,
+        }
       }
     },
     computed: {

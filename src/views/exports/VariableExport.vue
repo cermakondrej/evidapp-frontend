@@ -59,21 +59,15 @@
 </template>
 
 <script>
+  /* eslint-disable */
   import {FormWizard, TabContent} from 'vue-form-wizard'
   import 'vue-form-wizard/dist/vue-form-wizard.min.css'
-
   import AbsenceStep from "./steps/AbsenceStep.vue"
   import ShiftStep from "./steps/ShiftStep.vue"
-
   import flatPickr from 'vue-flatpickr-component';
   import 'flatpickr/dist/flatpickr.css';
   import vSelect from 'vue-select'
-
-
-  // Store Module
   import moduleWorks from '@/store/works/moduleWorks.js'
-
-  // For custom error message
   import {Validator} from 'vee-validate';
 
   const dict = {
@@ -85,6 +79,16 @@
 
 
   export default {
+    components: {
+      FormWizard,
+      flatPickr,
+      'v-select':
+      vSelect,
+      TabContent,
+      AbsenceStep,
+      ShiftStep
+    },
+    /* eslint-enable */
     data() {
       return {
         absence: null,
@@ -143,15 +147,6 @@
           })
         })
       }
-    },
-    components: {
-      FormWizard,
-      flatPickr,
-      'v-select':
-      vSelect,
-      TabContent,
-      AbsenceStep,
-      ShiftStep
     },
     created() {
       if (!moduleWorks.isRegistered) {

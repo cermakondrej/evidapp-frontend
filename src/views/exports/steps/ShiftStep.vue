@@ -238,6 +238,7 @@
         this.id = 0;
         this.labelLocal = "none";
       },
+      /* eslint-disable */
       promptAddNewEvent(date) {
         this.disabledFrom = false;
         this.addNewEventDialog(date);
@@ -281,6 +282,7 @@
       eventDragged(event, date) {
         // TODO
       }
+      /* eslint-enable */
     },
   }
 </script>
