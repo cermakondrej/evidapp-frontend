@@ -1,6 +1,6 @@
 {
-  "name": "vuexy-vuejs-html-laravel-dashboard-admin-template",
-  "version": "4.1.0",
+  "name": "evidapp-frontend",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "now-build": "vue-cli-service build",
