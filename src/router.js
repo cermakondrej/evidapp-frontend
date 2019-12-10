@@ -19,7 +19,6 @@
 
 import Vue from 'vue'
 import Router from 'vue-router'
-import auth from "@/auth/authService";
 
 Vue.use(Router)
 

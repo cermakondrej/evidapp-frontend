@@ -8,11 +8,11 @@
     "bru"
   ],
   "env": {
-    "NODE_ENV": "production",
+    "NODE_ENV": "production"
   },
   "build": {
     "env": {
-      "NODE_ENV": "production",
+      "NODE_ENV": "production"
     }
   },
   "builds": [

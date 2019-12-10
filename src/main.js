@@ -35,12 +35,6 @@ import '../themeConfig.js'
 // Firebase
 import '@/firebase/firebaseConfig'
 
-
-// Auth0 Plugin
-import AuthPlugin from "./plugins/auth";
-Vue.use(AuthPlugin);
-
-
 // ACL
 import acl from './acl/acl'
 

@@ -55,27 +55,8 @@ export default {
       dispatch('login', newPayload)
     }
   },
-  login({state, dispatch}, payload) {
-
-    // If user is already logged in notify and exit
-    if (state.isUserLoggedIn()) {
-      // Close animation if passed as payload
-      if (payload.closeAnimation) payload.closeAnimation()
-
-      payload.notify({
-        title: 'Login Attempt',
-        text: 'You are already logged in!',
-        iconPack: 'feather',
-        icon: 'icon-alert-circle',
-        color: 'warning'
-      })
-
-      return false
-    } else {
+  login({dispatch}, payload) {
       dispatch('loginJWT', payload)
-    }
-
-
   },
 
   registerUser({dispatch}, payload) {
@@ -140,33 +121,6 @@ export default {
             reject({message: "Wrong Email or Password"})
           }
 
-        })
-        .catch(error => {
-          reject(error)
-        })
-    })
-  },
-  registerUserJWT({commit}, payload) {
-
-    const {displayName, email, password, confirmPassword} = payload.userDetails
-
-    return new Promise((resolve, reject) => {
-
-      // Check confirm password
-      if (password !== confirmPassword) {
-        reject({message: "Password doesn't match. Please try again."})
-      }
-
-      jwt.registerUser(displayName, email, password)
-        .then(response => {
-          // Redirect User
-          router.push(router.currentRoute.query.to || '/')
-
-          // Update data in localStorage
-          localStorage.setItem("accessToken", response.data.accessToken)
-          commit('UPDATE_USER_INFO', response.data.userData, {root: true})
-
-          resolve(response)
         })
         .catch(error => {
           reject(error)
