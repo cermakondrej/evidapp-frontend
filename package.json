@@ -3,6 +3,7 @@
   "version": "4.1.0",
   "private": true,
   "scripts": {
+    "now-build": "vue-cli-service build",
     "serve": "vue-cli-service serve",
     "watch": "vue-cli-service serve --watch",
     "build": "vue-cli-service build --watch",
