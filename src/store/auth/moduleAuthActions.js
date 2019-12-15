@@ -7,8 +7,6 @@ export default {
       dispatch('loginJWT', payload)
   },
 
-
-
   // JWT
   loginJWT({commit}, payload) {
 

@@ -263,7 +263,7 @@ const router = new Router({
                     name: 'not-authorized',
                     component: () => import('@/views/pages/NotAuthorized.vue'),
                     meta: {
-                        rule: 'public'
+                        rule: 'editor'
                     }
                 },
                 {

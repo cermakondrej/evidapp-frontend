@@ -134,16 +134,16 @@
       },
       paginationPageSize() {
         if(this.gridApi) return this.gridApi.paginationGetPageSize()
-        else return 10
+        return 10
       },
       totalPages() {
         if(this.gridApi) return this.gridApi.paginationGetTotalPages()
-        else return 0
+        return 0
       },
       currentPage: {
         get() {
           if(this.gridApi) return this.gridApi.paginationGetCurrentPage() + 1
-          else return 1
+          return 1
         },
         set(val) {
           this.gridApi.paginationGoToPage(val - 1)

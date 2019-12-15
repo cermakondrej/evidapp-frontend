@@ -20,23 +20,41 @@
         icon-no-border
         icon="icon icon-lock"
         icon-pack="feather"
-        label-placeholder="Password"
+        label-placeholder="Heslo"
         v-model="password"
         class="w-full mt-6" />
     <span class="text-danger text-sm">{{ errors.first('password') }}</span>
 
     <div class="flex flex-wrap justify-between my-5">
-        <vs-checkbox v-model="checkbox_remember_me" class="mb-3">Remember Me</vs-checkbox>
+        <vs-checkbox v-model="checkbox_remember_me" class="mb-3">Pamatovat si mě</vs-checkbox>
 <!--        <router-link to="/forgot-password">Forgot Password?</router-link>-->
     </div>
     <div class="flex flex-wrap justify-between mb-3">
-      <vs-button :disabled="!validateForm" @click="loginJWT">Login</vs-button>
+      <vs-button :disabled="!validateForm" @click="loginJWT">Přihlásit se</vs-button>
     </div>
   </div>
 </template>
 
 <script>
-export default {
+  import {Validator} from "vee-validate";
+
+  const dict = {
+    custom: {
+      email: {
+        required: 'Prosím, vyplňte Váš email',
+        email: 'Email není ve správném tvaru'
+      },
+      password: {
+        required: 'Prosím, vyplňte Vaše heslo',
+      }
+    }
+  };
+
+  // register custom messages
+  Validator.localize('en', dict);
+  Validator.localize('cs', dict)
+
+  export default {
   data() {
     return {
       email: '',

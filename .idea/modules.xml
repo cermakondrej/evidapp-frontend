@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../evidapp-backend/.idea/evidapp-backend_old.iml" filepath="$PROJECT_DIR$/../evidapp-backend/.idea/evidapp-backend_old.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/evidapp-frontend.iml" filepath="$PROJECT_DIR$/.idea/evidapp-frontend.iml" />
     </modules>
   </component>
