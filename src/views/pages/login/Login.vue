@@ -38,8 +38,9 @@
             LoginJwt,
         },
         mounted(){
+            console.log(this.$store.state.AppActiveUser.id)
             if(typeof this.$store.state.AppActiveUser.id !== "undefined")
-                this.$router.push('/')
+                this.$router.push('/').catch(() => {})
         }
     }
 

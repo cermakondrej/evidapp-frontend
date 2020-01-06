@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="392c9d0f-f0f0-43f5-af1e-51e063caa356" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/evidapp-frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/evidapp-frontend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/acl/acl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/acl/acl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/components/TheFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/components/TheFooter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/auth/moduleAuthActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/auth/moduleAuthActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/auth/moduleAuthGetters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/auth/moduleAuthGetters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/auth/moduleAuthMutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/auth/moduleAuthMutations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/auth/moduleAuthState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/auth/moduleAuthState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pages/company/cell-renderer/CellRendererLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/company/cell-renderer/CellRendererLink.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pages/job/JobList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/job/JobList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pages/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/login/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pages/login/LoginJWT.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/login/LoginJWT.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pages/user/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/user/UserList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pages/work/WorkList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/work/WorkList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +29,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../evidapp-backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Liff/tichalinka-backend" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
@@ -76,7 +63,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576346092997</updated>
-      <workItem from="1576346094404" duration="23585000" />
+      <workItem from="1576346094404" duration="24783000" />
+      <workItem from="1576423898402" duration="268000" />
+      <workItem from="1576425997187" duration="2350000" />
+      <workItem from="1576489392401" duration="599000" />
+      <workItem from="1576584747476" duration="2163000" />
+      <workItem from="1576601572989" duration="859000" />
+      <workItem from="1576619944291" duration="599000" />
+      <workItem from="1576664208271" duration="2745000" />
+      <workItem from="1576681194880" duration="55000" />
     </task>
     <servers />
   </component>
@@ -88,14 +83,23 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="667" y="357" width="643" height="390" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1576356521094" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576346100323">
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog" timestamp="1576452881630">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
+    <state x="167" y="125" width="1653" height="855" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1576452881630" />
+    <state x="776" y="290" width="424" height="484" key="FileChooserDialogImpl" timestamp="1576585044660">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state x="776" y="290" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1576585044660" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1576346100323" />
     <state x="482" y="187" key="SettingsEditor" timestamp="1576360499425">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1576360499425" />
+    <state x="758" y="258" width="461" height="589" key="VCS.ChangeListViewerDialog" timestamp="1576452883084">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="758" y="258" width="461" height="589" key="VCS.ChangeListViewerDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1576452883084" />
     <state x="1112" y="542" width="709" height="538" key="find.popup" timestamp="1576354017255">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
