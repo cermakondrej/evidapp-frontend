@@ -89,5 +89,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuexy/components/horizontalNavMenu.scss"
+@import "@/assets/scss/vuexy/components/horizontalNavMenu.scss";
+
+.relative {
+  position: relative !important;
+  margin: 4px 0 0 0;
+}
 </style>

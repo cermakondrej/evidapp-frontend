@@ -1,14 +1,3 @@
-<!-- =========================================================================================
-  File Name: TheNavbar.vue
-  Description: Navbar component
-  Component Name: TheNavbar
-  ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-  Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
 <div class="relative">
   <div class="vx-navbar-wrapper navbar-full p-0">
@@ -21,11 +10,8 @@
         <span class="vx-logo-text text-primary">EvidApp</span>
       </router-link>
 
-      <i18n />
 
       <search-bar />
-
-      <notification-drop-down />
 
       <profile-drop-down />
 
@@ -36,9 +22,7 @@
 
 <script>
 import Bookmarks            from "./components/Bookmarks.vue"
-import I18n                 from "./components/I18n.vue"
 import SearchBar            from "./components/SearchBar.vue"
-import NotificationDropDown from "./components/NotificationDropDown.vue"
 import ProfileDropDown      from "./components/ProfileDropDown.vue"
 import Logo                 from "../Logo.vue"
 
@@ -54,9 +38,7 @@ export default {
   components: {
     Logo,
     Bookmarks,
-    I18n,
     SearchBar,
-    NotificationDropDown,
     ProfileDropDown,
   },
   computed: {

@@ -4,7 +4,7 @@ import router from '@/router'
 export default {
     create({ commit }, payload) {
       return new Promise((resolve, reject) => {
-        axios.post("/api/companies/",  payload)
+        axios.post("/companies/",  payload)
           .then((response) => {
             commit('CREATE_COMPANY', response.data)
             router.push('/companies')
@@ -15,7 +15,7 @@ export default {
     },
   remove({ commit }, companyId) {
     return new Promise((resolve, reject) => {
-      axios.delete(`/api/companies/${companyId}`)
+      axios.delete(`/companies/${companyId}`)
         .then((response) => {
           commit('REMOVE_COMPANY', companyId)
           resolve(response)
@@ -25,7 +25,7 @@ export default {
   },
   edit({ commit }, payload) {
     return new Promise((resolve, reject) => {
-      axios.put(`/api/companies/${payload.id}`, payload)
+      axios.put(`/companies/${payload.id}`, payload)
         .then((response) => {
           router.push('/companies')
           commit('EDIT_COMPANY', response.data)
@@ -36,7 +36,7 @@ export default {
   },
   fetchOne(context,companyId) {
     return new Promise((resolve, reject) => {
-      axios.get(`/api/companies/${companyId}`)
+      axios.get(`/companies/${companyId}`)
         .then((response) => {
           resolve(response)
         })
@@ -45,7 +45,7 @@ export default {
   },
   fetchAll({ commit }) {
     return new Promise((resolve, reject) => {
-      axios.get("/api/companies/")
+      axios.get("/companies/")
         .then((response) => {
           commit('SET_COMPANIES', response.data)
           resolve(response)

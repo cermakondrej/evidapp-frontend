@@ -4,7 +4,7 @@ import router from '@/router'
 export default {
     create({ commit }, payload) {
       return new Promise((resolve, reject) => {
-        axios.post("/api/works/",  payload)
+        axios.post("/works/",  payload)
           .then((response) => {
             commit('CREATE_WORK', response.data)
             router.push('/works')
@@ -15,7 +15,7 @@ export default {
     },
   remove({ commit }, workId) {
     return new Promise((resolve, reject) => {
-      axios.delete(`/api/works/${workId}`)
+      axios.delete(`/works/${workId}`)
         .then((response) => {
           commit('REMOVE_WORK', workId)
           resolve(response)
@@ -25,7 +25,7 @@ export default {
   },
   edit({ commit }, payload) {
     return new Promise((resolve, reject) => {
-      axios.put(`/api/works/${payload.id}`, payload)
+      axios.put(`/works/${payload.id}`, payload)
         .then((response) => {
           router.push('/works')
           commit('EDIT_WORK', response.data)
@@ -36,7 +36,7 @@ export default {
   },
   fetchOne(context, workId) {
     return new Promise((resolve, reject) => {
-      axios.get(`/api/works/${workId}`)
+      axios.get(`/works/${workId}`)
         .then((response) => {
           resolve(response)
         })
@@ -45,7 +45,7 @@ export default {
   },
   fetchAll({ commit }) {
     return new Promise((resolve, reject) => {
-      axios.get("/api/works/")
+      axios.get("/works/")
         .then((response) => {
           commit('SET_WORKS', response.data)
           resolve(response)

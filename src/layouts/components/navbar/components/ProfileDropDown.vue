@@ -3,14 +3,16 @@
 
     <div class="text-right leading-tight hidden sm:block">
       <p class="font-semibold">{{ activeUserInfo.displayName }}</p>
-      <small>Available</small>
+<!--      <small>Available</small>-->
     </div>
 
     <vs-dropdown vs-custom-content vs-trigger-click class="cursor-pointer">
 
-      <div class="con-img ml-3">
-        <img key="onlineImg" :src="activeUserInfo.photoURL" alt="user-img" width="40" height="40" class="rounded-full shadow-md cursor-pointer block" />
-      </div>
+      <vs-avatar :src="activeUserInfo.photoURL" class="flex-shrink-0 mr-2" size="40px" />
+<!--      -->
+<!--      <div class="con-img ml-3">-->
+<!--        <img key="onlineImg" :src="activeUserInfo.photoURL" alt="user-img" width="40" height="40" class="rounded-full shadow-md cursor-pointer block" />-->
+<!--      </div>-->
 
       <vs-dropdown-menu class="vx-navbar-dropdown">
         <ul style="min-width: 9rem">
@@ -54,14 +56,12 @@ export default {
 
         if(localStorage.getItem("accessToken")) {
           localStorage.removeItem("accessToken")
-          this.$router.push('/login').catch(() => {})
         }
 
         // Change role on logout. Same value as initialRole of acj.js
         this.$acl.change('public')
         localStorage.removeItem('userInfo')
 
-        // This is just for demo Purpose. If user clicks on logout -> redirect
         this.$router.push('/login').catch(() => {})
     },
   }

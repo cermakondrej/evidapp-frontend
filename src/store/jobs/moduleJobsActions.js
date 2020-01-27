@@ -4,7 +4,7 @@ import router from '@/router'
 export default {
     create({ commit }, payload) {
       return new Promise((resolve, reject) => {
-        axios.post("/api/jobs/",  payload)
+        axios.post("/jobs/",  payload)
           .then((response) => {
             commit('CREATE_JOB', response.data)
             router.push('/jobs')
@@ -15,7 +15,7 @@ export default {
     },
   remove({ commit }, jobId) {
     return new Promise((resolve, reject) => {
-      axios.delete(`/api/jobs/${jobId}`)
+      axios.delete(`/jobs/${jobId}`)
         .then((response) => {
           commit('REMOVE_JOB', jobId)
           resolve(response)
@@ -25,7 +25,7 @@ export default {
   },
   edit({ commit }, payload) {
     return new Promise((resolve, reject) => {
-      axios.put(`/api/jobs/${payload.id}`, payload)
+      axios.put(`/jobs/${payload.id}`, payload)
         .then((response) => {
           router.push('/jobs')
           commit('EDIT_JOB', response.data)
@@ -36,7 +36,7 @@ export default {
   },
   fetchOne(context,jobId) {
     return new Promise((resolve, reject) => {
-      axios.get(`/api/jobs/${jobId}`)
+      axios.get(`/jobs/${jobId}`)
         .then((response) => {
           resolve(response)
         })
@@ -45,7 +45,7 @@ export default {
   },
   fetchAll({ commit }) {
     return new Promise((resolve, reject) => {
-      axios.get("/api/jobs/")
+      axios.get("/jobs/")
         .then((response) => {
           commit('SET_JOBS', response.data)
           resolve(response)

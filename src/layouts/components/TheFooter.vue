@@ -1,8 +1,8 @@
 <template functional>
     <footer class="the-footer flex-wrap justify-between" :class="classes">
         <span>COPYRIGHT &copy; {{ new Date().getFullYear() }}
-            <a href="https://www.ceron.cz/" target="_blank" rel="nofollow">
-            Ceron
+            <a href="https://www.randef.com/" target="_blank" rel="nofollow">
+            RANDEF
             </a>, All rights Reserved</span>
         <span class="md:flex hidden items-center">
             <span>Hand-crafted & Made with</span>

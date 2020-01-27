@@ -4,7 +4,7 @@ import router from '@/router'
 export default {
     create({ commit }, payload) {
       return new Promise((resolve, reject) => {
-        axios.post("/api/users/",  payload)
+        axios.post("/users/",  payload)
           .then((response) => {
             commit('CREATE_USER', response.data)
             router.push('/users')
@@ -15,7 +15,7 @@ export default {
     },
   remove({ commit }, userId) {
     return new Promise((resolve, reject) => {
-      axios.delete(`/api/users/${userId}`)
+      axios.delete(`/users/${userId}`)
         .then((response) => {
           commit('REMOVE_USER', userId)
           resolve(response)
@@ -25,7 +25,7 @@ export default {
   },
   edit({ commit }, payload) {
     return new Promise((resolve, reject) => {
-      axios.put(`/api/users/${payload.id}`, payload)
+      axios.put(`/users/${payload.id}`, payload)
         .then((response) => {
           router.push('/users')
           commit('EDIT_USER', response.data)
@@ -36,7 +36,7 @@ export default {
   },
   fetchOne(context, userId) {
     return new Promise((resolve, reject) => {
-      axios.get(`/api/users/${userId}`)
+      axios.get(`/users/${userId}`)
         .then((response) => {
           resolve(response)
         })
@@ -45,7 +45,7 @@ export default {
   },
   fetchAll({ commit }) {
     return new Promise((resolve, reject) => {
-      axios.get("/api/users/")
+      axios.get("/users/")
         .then((response) => {
           commit('SET_USERS', response.data)
           resolve(response)

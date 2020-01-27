@@ -3,7 +3,8 @@
 
     <div class="mt-5">
       <form-wizard color="rgba(var(--vs-primary), 1)" errorColor="rgba(var(--vs-danger), 1)" :title="null"
-                   :subtitle="null" finishButtonText="Submit">
+                   :subtitle="null" finishButtonText="Exportovat" nextButtonText="Další" backButtonText="Předchozí"
+                    @on-complete="formSubmit">
         <tab-content title="Období" class="mb-5" icon="feather icon-clock" :before-change="validateStep1">
 
           <form data-vv-scope="step-1">
@@ -43,16 +44,15 @@
         <!-- tab 2 content -->
         <tab-content title="Step 2" class="mb-5" icon="feather icon-briefcase">
           <form data-vv-scope="step-2">
-            <shift-step v-on:syncShifts="setShifts"></shift-step>
+            <shift-step v-on:syncEvents="setEvents" :show-date="shiftDate" :month-name="month.name"></shift-step>
           </form>
         </tab-content>
 
         <!-- tab 3 content -->
-        <tab-content title="Step 3" class="mb-5" icon="feather icon-image">
-          <form data-vv-scope="step-3">
-            <absence-step v-on:syncAbsence="setAbsence"></absence-step>
-          </form>
+        <tab-content title="Export" class="mb-5" icon="feather icon-clock">
+          <export-step :export-data="exportData" :active-export-prompt="activeExportPrompt"></export-step>
         </tab-content>
+
       </form-wizard>
     </div>
   </vx-card>
@@ -62,7 +62,7 @@
   /* eslint-disable */
   import {FormWizard, TabContent} from 'vue-form-wizard'
   import 'vue-form-wizard/dist/vue-form-wizard.min.css'
-  import AbsenceStep from "./steps/AbsenceStep.vue"
+  import ExportStep from "./steps/ExportStep.vue"
   import ShiftStep from "./steps/ShiftStep.vue"
   import flatPickr from 'vue-flatpickr-component';
   import 'flatpickr/dist/flatpickr.css';
@@ -85,8 +85,8 @@
       'v-select':
       vSelect,
       TabContent,
-      AbsenceStep,
-      ShiftStep
+      ShiftStep,
+      ExportStep
     },
     /* eslint-enable */
     data() {
@@ -121,17 +121,29 @@
           enableSeconds: false,
           noCalendar: true
         },
-
+        events: [],
+        activeExportPrompt: false,
+        exportData: []
       }
     },
     computed: {
       worksData() {
         return this.$store.getters['works/getAll']
       },
+      shiftDate(){
+       return (this.month === "" || +this.year <= 2000) ? new Date() : new Date(this.year + "-" + this.month.val + "-01")
+      },
+      monthName(){
+        return (this.month === "" || +this.year <= 2000) ? "" : this.month.name + " " + this.year
+      }
     },
     methods: {
-      setAbsence (absence) {
-        this.absence = absence
+      formSubmit() {
+        console.log(this.activeExportPrompt)
+        this.activeExportPrompt = true
+      },
+      setEvents (events) {
+        this.events = events
       },
       setShifts (shifts) {
         this.shifts = shifts
@@ -144,6 +156,46 @@
             } else {
               reject("correct all values");
             }
+          })
+        })
+      },
+      validateStep2() {
+        return new Promise((resolve, reject) => {
+
+          const payload = {
+            job_name: "Test",
+            employee: this.work.employee.id,
+            work: this.work.id,
+            work_start: this.workStart,
+            break_start: this.workBreakStart,
+            year: +this.year,
+            month: this.month.val,
+            vacation: this.absence.vacation,
+            sickness: [],
+            unpaid_vacation: [],
+            nursing: [],
+            billable_free_time: []
+          }
+          console.log(this.month)
+          console.log(this.month.value)
+          console.log(payload)
+          this.$vs.loading()
+
+          this.$store.dispatch('exports/createVariable', payload).then(response => {
+
+            this.$vs.loading.close()
+            this.exportData = response.data
+            resolve(true)
+          }).catch(error => {
+            this.$vs.loading.close()
+            reject("correct values")
+            this.$vs.notify({
+              title: 'Error',
+              text: error.message,
+              iconPack: 'feather',
+              icon: 'icon-alert-circle',
+              color: 'danger'
+            })
           })
         })
       }

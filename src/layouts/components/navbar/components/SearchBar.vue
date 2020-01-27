@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex padded">
     <div class="search-full-container w-full h-full absolute left-0 top-0" :class="{'flex': showFullSearch}" v-show="showFullSearch">
       <vx-auto-suggest
         ref="navbarSearch"
@@ -104,3 +104,10 @@ export default {
 }
 
 </script>
+
+
+<style scoped lang="scss">
+  .padded {
+    padding-right: 30px;
+  }
+</style>

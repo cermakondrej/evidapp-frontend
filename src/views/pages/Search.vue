@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: Search.vue
-    Description: Search Page
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <div id="search-page">
         <div class="search-page__search-bar flex items-center">

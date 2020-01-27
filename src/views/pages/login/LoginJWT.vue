@@ -83,7 +83,6 @@
 
       this.$store.dispatch('auth/loginJWT', payload)
         .then((response) => {
-          console.log(response)
           this.$vs.loading.close()
           this.$acl.change(response.userRole)
           this.$router.push('/')
