@@ -162,6 +162,8 @@
       validateStep2() {
         return new Promise((resolve, reject) => {
 
+          console.log(this.events)
+
           const payload = {
             job_name: "Test",
             employee: this.work.employee.id,
